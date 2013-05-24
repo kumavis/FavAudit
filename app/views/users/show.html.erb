@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @user.name %>
+</p>
+
+<p>
+  <b>Fav color:</b>
+  <%= @user.fav_color %>
+</p>
+
+<p>
+  <b>Fav food:</b>
+  <%= @user.fav_food %>
+</p>
+
+<table>
+  <tr>
+    <th>Action</th>
+    <th>timestamp</th>
+    <th>changes</th>
+  </tr>
+
+<% @user.audits.reverse.each do |audit| %>
+  <tr>
+    <td><%= audit.action %></td>
+    <td><%= audit.created_at %></td>
+    <td><%= audit.audited_changes %></td>
+  </tr>
+<% end %>
+</table>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
