@@ -25,6 +25,7 @@ gem 'jquery-rails'
 gem 'audited-activerecord'
 # for one of my rake tasks
 gem 'faker'
+gem 'pry'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

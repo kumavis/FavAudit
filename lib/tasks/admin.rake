@@ -18,4 +18,9 @@ namespace :admin  do
     end
     print "#{User.all.length} users' favs changed.\n"
   end
+
+  desc "clear audits from DB"
+  task :clear_audits => :environment do
+    Audited::Adapters::ActiveRecord::Audit.all.map{|a|a.delete()}
+  end
 end
